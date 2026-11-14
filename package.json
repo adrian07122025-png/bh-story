@@ -1,0 +1,8 @@
+{
+  "name": "bh-story-loja",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Loja BH Story com cadastro, pedidos, painel em tempo real, Monica, Suporte IA e player musical",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" }
+}

@@ -1,0 +1,36 @@
+BH STORY — LOJA COM CADASTRO, PAINEL E MONICA
+
+O QUE ESTA VERSÃO FAZ
+- Cadastro e login de clientes com endereço de entrega.
+- Senhas de clientes armazenadas com hash scrypt (não em texto puro).
+- Clientes com login ativo aparecem no painel enquanto enviam sinal de presença.
+- Pedidos são gravados no servidor e aparecem no painel administrativo em tempo real (SSE).
+- O painel permite atualizar o status dos pedidos.
+- Monica e Suporte BH Story oferecem atendimento automatizado inicial por regras para dúvidas comuns. Ainda não são IA generativa conectada.
+- Contato da loja exibido no rodapé: 359847576.
+- Painel administrativo permite enviar e excluir músicas MP3, OGG, WAV ou M4A de até 15 MB; os clientes podem tocar, pausar, silenciar e ajustar o volume. O navegador exige interação do cliente antes de iniciar o áudio.
+- Produtos continuam cadastrados no navegador nesta versão; para uma loja pública, mova o catálogo para banco de dados.
+
+COMO EXECUTAR NO WINDOWS
+1. Instale Node.js 18 ou superior.
+2. Extraia a pasta bh_story_projeto.
+3. Abra o Prompt de Comando dentro da pasta.
+4. Configure as variáveis de ambiente antes de iniciar:
+   set ADMIN_EMAIL=seu-email@exemplo.com
+   set ADMIN_PASSWORD=UMA_SENHA_FORTE_E_UNICA
+   set NODE_ENV=production
+5. Execute: npm start
+6. Abra: http://localhost:3000
+7. Para entrar na área administrativa, use o e-mail e a senha que configurou no passo 4.
+
+IMPORTANTE ANTES DE PUBLICAR NA INTERNET
+- Esta é uma base funcional para desenvolvimento/testes, não uma implantação pronta para produção.
+- Use hospedagem com HTTPS, banco de dados gerenciado, backups, proteção contra abuso e gestão segura de sessões.
+- Não publique com a senha de demonstração. Defina ADMIN_EMAIL e ADMIN_PASSWORD fortes no ambiente do servidor.
+- O armazenamento atual usa arquivo JSON local; em hospedagem com múltiplas instâncias ou disco efêmero, substitua por PostgreSQL ou outro banco persistente.
+- O painel mostra clientes que fizeram login e estão ativos; visitantes anônimos não são identificados.
+- Monica nesta versão é uma atendente automatizada por regras, não um modelo de IA generativa conectado. Para respostas realmente inteligentes, configure um provedor de IA por uma API segura no servidor; nunca coloque chave de API no HTML.
+- O checkout registra pedido, mas não cobra pagamento nem calcula frete.
+- Envie somente músicas próprias ou com licença/autorização para reprodução pública. O responsável pela loja deve confirmar os direitos autorais. Integre um gateway de pagamento e serviço de frete antes de aceitar vendas reais.
+- Endereços e e-mails são dados pessoais. Antes de uso real, publique política de privacidade, defina retenção e acesso aos dados e revise a conformidade com a LGPD com um responsável adulto/profissional.
+- Faça testes com dados fictícios. Não use informações reais de clientes enquanto a loja não estiver hospedada e protegida corretamente.
